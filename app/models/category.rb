@@ -12,7 +12,7 @@
 #
 
 # Defines the Category model associated with Posts
-class Post < ApplicationRecord
+class Category < ApplicationRecord
   # has_many :comments, dependent: :destroy
   has_many :post_categories, dependent: :destroy
   has_many :posts, through: :post_categories
