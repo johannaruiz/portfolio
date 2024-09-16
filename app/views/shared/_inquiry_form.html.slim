@@ -1,0 +1,19 @@
+= form_with model: @inquiry, local: false do |f|
+  = f.hidden_field :type, value: type
+  = f.label :name do
+    span Name
+    = f.text_field :name
+  = f.label :email do
+    span Email
+    = f.email_field :email
+  = f.label :message do
+    span Message
+    = f.text_area :message
+  - if type == 'employment'
+    = f.label :phone do
+      span Phone
+      = f.telephone_field :phone
+    = f.label :company do
+      span Company
+      = f.text_field :company
+  = f.submit 'Send Message'
