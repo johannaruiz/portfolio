@@ -15,7 +15,7 @@
 
 # Defines the Post model used for the blog
 class Post < ApplicationRecord
-  # has_many :comments, dependent: :destroy
+  has_many :comments, dependent: :destroy
   has_many :post_categories, dependent: :destroy
   has_many :categories, through: :post_categories
 
