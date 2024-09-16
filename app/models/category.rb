@@ -18,6 +18,8 @@ class Category < ApplicationRecord
   has_many :posts, through: :post_categories
   before_validation :generate_slug
 
+  validates :slug, presence: true, uniqueness: true
+
   def to_param
     slug
   end

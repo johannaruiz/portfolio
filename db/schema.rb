@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_20_175507) do
+ActiveRecord::Schema[7.1].define(version: 2024_09_03_030007) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -21,6 +21,17 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_20_175507) do
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_categories_on_name", unique: true
     t.index ["slug"], name: "index_categories_on_slug", unique: true
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.bigint "post_id", null: false
+    t.text "body", null: false
+    t.boolean "approved", default: false, null: false
+    t.integer "parent_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["parent_id"], name: "index_comments_on_parent_id"
+    t.index ["post_id"], name: "index_comments_on_post_id"
   end
 
   create_table "inquiries", force: :cascade do |t|
@@ -54,6 +65,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_20_175507) do
     t.index ["slug"], name: "index_posts_on_slug", unique: true
   end
 
+  add_foreign_key "comments", "posts"
   add_foreign_key "post_categories", "categories"
   add_foreign_key "post_categories", "posts"
 end

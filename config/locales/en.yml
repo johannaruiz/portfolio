@@ -37,12 +37,37 @@ en:
   job_tag: "Creating accessible software experiences; It's kind-of my thing"
   email: "hey@johannabruiz.com"
   phone: "612-460-8354"
-
+  links:
+    github: "https://github.com/johannaruiz"
+    codepen: "https://codepen.io/johannaruiz"
+    twitter: "https://twitter.com/johannabruiz"
+    instagram: "https://www.instagram.com/johannabruiz/"
   home:
     intro:
-      part_1: "Once upon a time, in a galaxy far, far away" 
+      part_1: "A long time ago, in a galaxy not so far away" 
       part_2: "I used to create MySpace themes for bands."
     content:
       part_1: "From startups to renowned agencies, leading and building teams; My true passion has always software development via developing websites, web, mobile and integrated applications."
-      part_2: "Today, I focus primarily on building accessible software solutions utilizing Ruby on Rails, Hotwired/Turbo + Stimulus (See skills)."
-      part_3: "When I'm not at my computer, I enjoy gardening, lifting weights, cycling, reading, playing board and video games, watching sci-fi and anime, and spending time with my kids."
+      part_2: "Today, I focus primarily on building accessible software solutions utilizing Ruby on Rails, Hotwired/Turbo + Stimulus (See skills)." #TODO: link_to skills
+      part_3: "When I'm not at my computer, I enjoy gardening, lifting weights, cycling, playing music, going to concerts, reading, playing board and video games, watching sci-fi and anime, and spending time with my kids."
+  skills:
+    programming:
+      - "Ruby"
+      - "Ruby on Rails"
+      - "Python"
+      - "Django"
+      - "JavaScript"
+      - "TypeScript"
+      - "PHP"
+      - "WordPress"
+      - "Laravel"
+      - "SQL"
+      - "MySQL"
+      - "PostgreSQL"
+      - "HTML"
+      - "CSS/SCSS"
+      - "A11Y/W3C/WCAG"
+      - "Go"
+      - "Rust"
+      - "R"
+    managerial:
