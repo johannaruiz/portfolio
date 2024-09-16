@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     resources :comments, only: :create
   end
 
+  get '/blog/categories/:slug', to: 'categories#show', as: :category_posts_by_slug
+
   # Defines page routes e.g. About, Contact
   resources :pages, path: '', param: :action, only: [:show]
 end
