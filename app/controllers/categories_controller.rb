@@ -12,7 +12,7 @@ class CategoriesController < ApplicationController
       @posts = @category.posts
       render 'posts/index'
     else
-      redirect_to blog_categories_path, alert: 'Category not found'
+      redirect_to blog_categories_path, alert: t('categories.not_found')
     end
   end
 end

@@ -21,7 +21,7 @@ class Post < ApplicationRecord
 
   before_save :generate_slug
 
-  enum status: { draft: 0, published: 1 }
+  enum :status, { draft: 0, published: 1 }
 
   def to_param
     slug

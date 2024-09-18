@@ -13,3 +13,15 @@ Capybara:
 
 Rails:
   Enabled: true
+
+AllCops:
+  TargetRubyVersion: 3.2.0
+  Exclude:
+    - 'bin/**/*'
+    - 'config/**/*'
+    - 'db/**/*'
+    - 'vendor/**/*'
+  NewCops: enable
+
+RSpec/NestedGroups:
+  Max: 4

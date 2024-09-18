@@ -71,3 +71,12 @@ en:
       - "Rust"
       - "R"
     managerial:
+  categories:
+    not_found: "Category not found"
+  activerecord:
+    errors:
+      models:
+        post_category:
+          attributes:
+            post_id:
+              taken: "Already associated with this category"
