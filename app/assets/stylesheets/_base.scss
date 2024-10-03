@@ -1,0 +1,80 @@
+/*
+January - Light Blue (#98B4D4/#D4B898)
+February - Pink
+March - Green
+April - Yellow
+May - Lilac
+June - Sand
+July - Coral
+August - Bright Blue
+Spetember - Rust
+October = Orange
+November - Maroon/Brown
+December - Red/Green
+*/
+
+$oxford-blue: #212A37;
+$rich-black: #0A0A0A;
+$eerie-black: #232023;
+$black: #11181C;
+$white: #ffffff;
+$offwhite: #e8e8e8;
+$red: #921C2D;
+$red-light: #D69E9E;
+
+
+:root{
+--color-bg:#{$eerie-black};
+--color-fg:#{$offwhite};
+--color-error: #{$red-light};
+--link-color:#{$offwhite};
+--button-bg:#{$offwhite};
+--button-fg:#{$eerie-black};
+}
+
+@media (prefers-color-scheme: light){
+  :root{
+    --color-bg:#{$offwhite};
+    --color-fg:#{$eerie-black};
+    --color-error:#{$red};
+    --link-color:#{$eerie-black};
+    --button-bg:#{$eerie-black};
+    --button-fg:#{$offwhite};
+  }
+}
+
+body{
+  font-family: sans-serif;
+  background: var(--color-bg);
+  color: var(--color-fg);
+}
+ul{
+  &#inquiry-buttons{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+  }
+}
+.btn{
+  color: var(--button-fg);
+  background: var(--button-bg);
+}
+a{
+  color: var(--link-color);
+}
+.error-message, .required, .flash-error{
+  color: var(--color-error);
+}
+
+#web_inquiry_form{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  label{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+}
