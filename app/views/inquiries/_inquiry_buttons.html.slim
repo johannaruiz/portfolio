@@ -1,0 +1,11 @@
+= turbo_frame_tag 'inquiry_form'
+  = render partial: "shared/flash"
+  section.container
+    .row
+      .col-12
+        ul#inquiry-buttons
+          li
+            = link_to 'Say Hi!', new_inquiry_path(kind: 'basic'), data: { turbo_frame: 'inquiry_form' }, class: 'btn btn-basic'
+          li
+            = link_to 'Connect Professionally', new_inquiry_path(kind: 'employment'), data: { turbo_frame: 'inquiry_form' }, class: 'btn btn-employment'
+  

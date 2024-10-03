@@ -1,0 +1,43 @@
+= turbo_frame_tag 'inquiry_form' do
+  = form_with model: @inquiry || Inquiry.new, url: inquiries_path, method: :post, data: { controller: 'reset-form', 'reset-form-target': 'form', action: 'turbo:submit-end->reset-form#reset' }, id: 'web_inquiry_form', local: false do |f|
+    = render partial: 'shared/flash'
+    = f.hidden_field :kind, value: kind
+    = f.label :name do
+      span
+        | Name
+        sup.required *
+      = f.text_field :name, data: { 'reset-form-target': 'name' }, required: true, pattern: '\S+.*'
+      - if @inquiry.errors[:name].present?
+        .error-message
+          = @inquiry.errors[:name].join(', ')
+    = f.label :email do
+      span
+        | Email
+        sup.required *
+      = f.email_field :email, data: { 'reset-form-target': 'email' }, required: true, pattern: '\S+.*'
+      - if @inquiry.errors[:email].present?
+        .error-message
+          = @inquiry.errors[:email].join(' & ')
+    = f.label :message do
+      span
+        | Message
+        sup.required *
+      = f.text_area :message, data: { 'reset-form-target': 'message' }, required: true, pattern: '\S+.*'
+      - if @inquiry.errors[:message].present?
+        .error-message
+          = @inquiry.errors[:message].join(', ')
+    - if kind == 'employment'
+      = f.label :phone do
+        span Phone
+        = f.telephone_field :phone, data: { 'reset-form-target': 'phone' }
+        - if @inquiry.errors[:phone].present?
+          .error-message
+            = @inquiry.errors[:phone].join(', ')
+      = f.label :company do
+        span Company
+        = f.text_field :company, data: { 'reset-form-target': 'company' }
+        - if @inquiry.errors[:company].present?
+          .error-message
+            = @inquiry.errors[:company].join(', ')
+    = f.submit 'Send Message'
+  = button_to 'Cancel', cancel_inquiries_path, method: :get, data: { turbo_frame: 'inquiry_form' }, class: 'btn-cancel'
