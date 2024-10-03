@@ -1,12 +1,12 @@
 <!--Intro-->
-h1 = portfolio_name
+section
+  .container
+    .row
+      .col-12
+        h1 = portfolio_name
 <!--Work-->
 <!--Blog-->
 <!--About-->
+= turbo_frame_tag "about-johanna", src: url_for(controller: 'pages', action: 'about')
 <!--Contact-->
-= contact_by_phone
-br
-= contact_by_email(t('email'), 'hey[at]johannabruiz.com')
-= fun_intro
-= serious_intro
-= render 'shared/inquiry_form', type: 'employment'
+= turbo_frame_tag "contact-johanna", src: url_for(controller: 'pages', action: 'contact')
