@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Actions and Requests for Inquiries
+# Actions and Request Methods for Inquiries
 class InquiriesController < ApplicationController
   def new
     @inquiry = Inquiry.new

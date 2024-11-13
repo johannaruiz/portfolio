@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Functionality for Pages
+# Actions and Request Methods for Pages
 class PagesController < ApplicationController
   def home
     @inquiry = Inquiry.new
