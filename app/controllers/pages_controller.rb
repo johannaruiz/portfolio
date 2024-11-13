@@ -2,7 +2,9 @@
 
 # Functionality for Pages
 class PagesController < ApplicationController
-  def home; end
+  def home
+    @inquiry = Inquiry.new
+  end
 
   # def about; end
 

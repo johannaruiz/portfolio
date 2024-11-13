@@ -52,30 +52,45 @@ en:
       part_3: "When I'm not at my computer, I enjoy gardening, lifting weights, cycling, playing music, going to concerts, reading, playing board and video games, watching sci-fi and anime, and spending time with my kids."
   skills:
     programming:
-      - "Ruby"
-      - "Ruby on Rails"
-      - "Python"
-      - "Django"
-      - "JavaScript"
-      - "TypeScript"
-      - "PHP"
-      - "WordPress"
-      - "Laravel"
-      - "SQL"
-      - "MySQL"
-      - "PostgreSQL"
-      - "HTML"
-      - "CSS/SCSS"
-      - "A11Y/W3C/WCAG"
-      - "Go"
-      - "Rust"
-      - "R"
+      frontend:
+        - "HTML/Haml/Slim/ERB"
+        - "JavaScript"
+        - "CSS/SASS/SCSS"
+        - "TypeScript"
+      backend:
+        - "Ruby"
+        - "Ruby on Rails"
+        - "Python"
+        - "Django"
+        - "PHP"
+        - "WordPress"
+        - "Laravel"
+        - "SQL"
+        - "MySQL"
+        - "PostgreSQL"
+        - "Go"
+        - "Rust"
+        - "R"
+      standards:
+        - "A11Y"
+        - "W3C"
+        - "WCAG"
     managerial:
   categories:
     not_found: "Category not found"
+  inquiry:
+    create:
+      success: "Your inquiry was submitted successfully!"
+      failure: "Inquiry submission failed. Please fix the errors and re-submit."
   activerecord:
     errors:
+      messages:
+        blank: "This field is required"
       models:
+        inquiry:
+          attributes:
+            email:
+              invalid: "Your email is invalid"
         post_category:
           attributes:
             post_id:

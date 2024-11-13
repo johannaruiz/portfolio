@@ -5,13 +5,22 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root 'pages#home'
-
-  resources :posts, path: '/blog', param: :id do
-    resources :comments, only: :create
+  # Defines the routes for Inquiry submissions
+  resources :inquiries, only: [:new, :create] do
+    collection do
+      get 'cancel'
+    end
   end
-
-  get '/blog/categories/:slug', to: 'categories#show', as: :category_posts_by_slug
 
   # Defines page routes e.g. About, Contact
   resources :pages, path: '', param: :action, only: [:show]
+
+  # Defines the post/blog routes
+  resources :posts, path: '/blog', param: :id do
+    # Defines the comments routes
+    resources :comments, only: :create
+  end
+  
+  # TODO: Rework this attempt at category pages
+  get '/blog/categories/:slug', to: 'categories#show', as: :category_posts_by_slug
 end
