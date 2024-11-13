@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Helper methods for intro-related functionality
+# Helper Methods for Intro specific view functionality
 module IntroHelper
   def portfolio_name
     "#{t('name.first')} #{t('name.last')}"
@@ -24,7 +24,7 @@ module IntroHelper
   def serious_intro
     content_tag :div, class: 'serious-intro' do
       concat(content_tag(:p, t('home.content.part_1')))
-      concat(content_tag(:p, t('home.content.part_2')))
+      concat(anchored_line)
       concat(content_tag(:p, t('home.content.part_3')))
     end
   end
@@ -34,6 +34,17 @@ module IntroHelper
       concat(t('home.intro.part_1'))
       concat(hellip)
     end
+  end
+
+  def anchored_line
+    content_tag :p do
+      concat(t('home.content.part_2'))
+      concat(skills_link)
+    end
+  end
+
+  def skills_link
+    link_to('(See Skills)', '#skills', data: { turbo: false })
   end
 
   def hellip

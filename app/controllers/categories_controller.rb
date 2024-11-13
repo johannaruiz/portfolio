@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# Functionality for Pages
+# Actions and Request Methods for Pages
 class CategoriesController < ApplicationController
   def index
     @categories = Category.all

@@ -12,8 +12,8 @@
 #
 # Indexes
 #
-#  index_comments_on_parent_id  (parent_id)
-#  index_comments_on_post_id    (post_id)
+#  index_categories_on_name
+#  index_categories_on_slug
 
 # Defines the comment model associated with posts
 class Comment < ApplicationRecord
