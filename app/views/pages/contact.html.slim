@@ -1,4 +1,4 @@
-= turbo_frame_tag "contact-johanna" do
+= turbo_frame_tag 'contact-johanna' do
   section#contact
     .container
       .row
@@ -9,4 +9,7 @@
           ul
             li = contact_by_phone
             li = contact_by_email(t('email'), 'hey[at]johannabruiz.com')
-      = render partial: "inquiries/inquiry_buttons"
+      = render partial: 'inquiries/inquiry_buttons'
+  section#skills
+    .container
+      h2 Skills
