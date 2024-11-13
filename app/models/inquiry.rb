@@ -22,7 +22,9 @@ class Inquiry < ApplicationRecord
 
   validates :name, :email, :message, presence: true
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
-  # validates :kind, inclusion: { in: Inquiry.kind.keys }
+  validates :phone,
+            format: { with: /\A(\+?\d{1,4}[-.\s]?)?(\(?\d{1,3}\)?[-.\s]?)?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}\z/ },
+            allow_nil: true
   enum :kind, { basic: 0, employment: 1 }
 
   private
